@@ -9,19 +9,50 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
 //    private var label : SKLabelNode?
 //    private var spinnyNode : SKShapeNode?
     var coinMan : SKSpriteNode?
+    var ground : SKSpriteNode?
+    var ceiling : SKSpriteNode?
+    var scoreLabel : SKLabelNode?
+    
     var coinTimer : Timer?
+    var score = 0
+    
+    let coinManCategory : UInt32 = 0x1 << 1
+    let coinCategory : UInt32 = 0x1 << 2
+    let bombCategory : UInt32 = 0x1 << 3
+    let groundAndCeilingCategory : UInt32 = 0x1 << 4
     
     override func didMove(to view: SKView) {
+        //make sure you set up the delegae otherwise it wont work
+        physicsWorld.contactDelegate = self
         
         // Get label node from scene and store it for use later
 //        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         // the name of the skspritenode or object inside the game that you put randomly
         coinMan = childNode(withName: "coinMain") as? SKSpriteNode
+        coinMan?.physicsBody?.categoryBitMask = coinManCategory
+        //keep track of the contact between the coin or the bomb
+        coinMan?.physicsBody?.contactTestBitMask = coinCategory | bombCategory
+        
+        coinMan?.physicsBody?.collisionBitMask = groundAndCeilingCategory
+        
+        
+        
+        ground = childNode(withName: "ground") as? SKSpriteNode
+        ground?.physicsBody?.categoryBitMask = groundAndCeilingCategory
+        
+        ground?.physicsBody?.collisionBitMask = coinManCategory
+        
+        
+        scoreLabel = childNode(withName: "scoreLabel") as? SKLabelNode
+        
+        ceiling = childNode(withName: "ceiling") as? SKSpriteNode
+        ceiling?.physicsBody?.categoryBitMask = groundAndCeilingCategory
+        
         
         coinTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
             //since it is in the block, you should put the self in this
@@ -78,7 +109,7 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        coinMan?.physicsBody?.applyForce(CGVector(dx: 0 , dy: 100_0000))
+        coinMan?.physicsBody?.applyForce(CGVector(dx: 0 , dy: 100_000.50))
 //        if let label = self.label {
 //            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
 //        }
@@ -86,8 +117,33 @@ class GameScene: SKScene {
 //        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        score += 1
+        scoreLabel?.text = ("Score: \(score)")
+//        print ("Contact + \(counter 1)")
+        if contact.bodyA.categoryBitMask == coinCategory {
+            contact.bodyA.node?.removeFromParent()
+            
+        }
+        if contact.bodyB.categoryBitMask == coinCategory {
+            contact.bodyB.node?.removeFromParent()
+            
+        }
+    }
+    
     func createCoin() {
         let coin = SKSpriteNode(imageNamed: "coin")
+        
+        //need to add the physic body
+        coin.physicsBody = SKPhysicsBody(rectangleOf: coin.size)
+        coin.physicsBody?.categoryBitMask = coinCategory
+        
+        //to turn off the graivity
+        coin.physicsBody?.affectedByGravity = false
+        //what does the coin need to collide with
+        coin.physicsBody?.contactTestBitMask = coinManCategory
+        //you dont want the coin collinding wiht anybody
+        coin.physicsBody?.collisionBitMask = 0
         addChild(coin)
         
         //setting the postionn of the coin in the middle of the screen
