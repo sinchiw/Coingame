@@ -17,6 +17,15 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        GameScene.init().highScore()
+        
+//        var highScoreDefault = UserDefaults.standard
+//        if highScoreDefault.value(forKey: "Highscore") == nil {
+//            GameScene.init().high = highScoreDefault.value(forKey: "Highscore") as! NSInteger
+//            GameScene.init().highScoreLabel?.text = "Highscore: \(GameScene.init().high)"
+//        }
+        
+        
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -30,8 +39,8 @@ class GameViewController: UIViewController {
             
             view.ignoresSiblingOrder = true
             
-            view.showsFPS = true
-            view.showsNodeCount = true
+            view.showsFPS = false
+            view.showsNodeCount = false
         }
     }
 

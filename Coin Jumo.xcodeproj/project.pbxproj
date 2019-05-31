@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1A5153229EFBF90080A19A /* bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1A5152229EFBF90080A19A /* bomb.png */; };
+		CE1A515522A09C360080A19A /* play-button.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1A515422A09C360080A19A /* play-button.png */; };
+		CE1A515B22A0B2680080A19A /* frame-3.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1A515622A0B2680080A19A /* frame-3.png */; };
+		CE1A515C22A0B2680080A19A /* frame-1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1A515722A0B2680080A19A /* frame-1.png */; };
+		CE1A515D22A0B2680080A19A /* frame-2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1A515822A0B2680080A19A /* frame-2.png */; };
+		CE1A515E22A0B2680080A19A /* frame-5.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1A515922A0B2680080A19A /* frame-5.png */; };
+		CE1A515F22A0B2680080A19A /* frame-4.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1A515A22A0B2680080A19A /* frame-4.png */; };
+		CE1A516322A173540080A19A /* grass-2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1A516222A173540080A19A /* grass-2.png */; };
 		CE2F1BBF2283840500495B3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F1BBE2283840500495B3A /* AppDelegate.swift */; };
 		CE2F1BC12283840500495B3A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE2F1BC02283840500495B3A /* GameScene.sks */; };
 		CE2F1BC32283840500495B3A /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE2F1BC22283840500495B3A /* Actions.sks */; };
@@ -38,6 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE1A5152229EFBF90080A19A /* bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomb.png; sourceTree = "<group>"; };
+		CE1A515422A09C360080A19A /* play-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-button.png"; sourceTree = "<group>"; };
+		CE1A515622A0B2680080A19A /* frame-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-3.png"; sourceTree = "<group>"; };
+		CE1A515722A0B2680080A19A /* frame-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-1.png"; sourceTree = "<group>"; };
+		CE1A515822A0B2680080A19A /* frame-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-2.png"; sourceTree = "<group>"; };
+		CE1A515922A0B2680080A19A /* frame-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-5.png"; sourceTree = "<group>"; };
+		CE1A515A22A0B2680080A19A /* frame-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-4.png"; sourceTree = "<group>"; };
+		CE1A516222A173540080A19A /* grass-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grass-2.png"; sourceTree = "<group>"; };
 		CE2F1BBB2283840500495B3A /* Coin Jumo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coin Jumo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2F1BBE2283840500495B3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE2F1BC02283840500495B3A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -107,12 +123,20 @@
 			children = (
 				CE2F1BBE2283840500495B3A /* AppDelegate.swift */,
 				CE2F1BC02283840500495B3A /* GameScene.sks */,
+				CE1A5152229EFBF90080A19A /* bomb.png */,
 				CE2F1BC22283840500495B3A /* Actions.sks */,
 				CE2F1BC42283840500495B3A /* GameScene.swift */,
+				CE1A515722A0B2680080A19A /* frame-1.png */,
+				CE1A515822A0B2680080A19A /* frame-2.png */,
+				CE1A515622A0B2680080A19A /* frame-3.png */,
+				CE1A515A22A0B2680080A19A /* frame-4.png */,
+				CE1A515922A0B2680080A19A /* frame-5.png */,
+				CE1A515422A09C360080A19A /* play-button.png */,
 				CE2F1BC62283840500495B3A /* GameViewController.swift */,
 				CE2F1BC82283840500495B3A /* Main.storyboard */,
 				CEABCFC4229DDDB00073D586 /* coin.png */,
 				CE2F1BCB2283840700495B3A /* Assets.xcassets */,
+				CE1A516222A173540080A19A /* grass-2.png */,
 				CE2F1BCD2283840700495B3A /* LaunchScreen.storyboard */,
 				CE2F1BD02283840700495B3A /* Info.plist */,
 			);
@@ -241,8 +265,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1A5153229EFBF90080A19A /* bomb.png in Resources */,
+				CE1A515B22A0B2680080A19A /* frame-3.png in Resources */,
+				CE1A515F22A0B2680080A19A /* frame-4.png in Resources */,
+				CE1A515522A09C360080A19A /* play-button.png in Resources */,
 				CE2F1BCA2283840500495B3A /* Main.storyboard in Resources */,
 				CE2F1BC12283840500495B3A /* GameScene.sks in Resources */,
+				CE1A515D22A0B2680080A19A /* frame-2.png in Resources */,
+				CE1A515C22A0B2680080A19A /* frame-1.png in Resources */,
+				CE1A515E22A0B2680080A19A /* frame-5.png in Resources */,
+				CE1A516322A173540080A19A /* grass-2.png in Resources */,
 				CEABCFC5229DDDB00073D586 /* coin.png in Resources */,
 				CE2F1BCC2283840700495B3A /* Assets.xcassets in Resources */,
 				CE2F1BCF2283840700495B3A /* LaunchScreen.storyboard in Resources */,
