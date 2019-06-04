@@ -99,24 +99,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        }
     }
     
-    func highScore() {
-//         var high = 0
-        if (score > high){
-            self.high = score
-//            highScoreLabel?.text = "Highscore : \(high)"
-            var highScoreSave = UserDefaults.standard
-            highScoreSave.set(high, forKey: "Highscore")
-            highScoreSave.synchronize()
-            
-            return
-                (highScoreLabel?.text = ("Highscore: \(highScoreSave.integer(forKey: "Highscore"))"))!
-            
-            
-            
-
-        }
-
-    }
+//    func highScore() {
+////         var high = 0
+//        if (score > high){
+//            self.high = score
+////            highScoreLabel?.text = "Highscore : \(high)"
+//            var highScoreSave = UserDefaults.standard
+//            highScoreSave.set(high, forKey: "Highscore")
+//            highScoreSave.synchronize()
+//
+//            return
+//                (highScoreLabel?.text = ("Highscore: \(highScoreSave.integer(forKey: "Highscore"))"))!
+//
+//
+//
+//
+//        }
+//
+//    }
 //
     func createGrass(){
         

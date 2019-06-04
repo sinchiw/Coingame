@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        GameScene.init().highScore()
+//        GameScene.init().highScore()
         
 //        var highScoreDefault = UserDefaults.standard
 //        if highScoreDefault.value(forKey: "Highscore") == nil {
